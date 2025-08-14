@@ -67,6 +67,71 @@ summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{mar
           background: linear-gradient(135deg, #E55A2B, #D17D1A);
         }
       </style>
+      <style type="text/css">
+        .mobile-header,
+.mobile-nav {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+  .mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+  }
+
+  .burger {
+    width: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+  }
+
+  .burger span {
+    display: block;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+  }
+
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    background: #444;
+  }
+
+  .mobile-nav a {
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    border-bottom: 1px solid #555;
+  }
+
+  .mobile-nav.show {
+    display: flex;
+  }
+}
+      </style>
+      <header class="mobile-header">
+  <div class="logo">ARENALYST</div>
+  <div class="burger" id="burger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#home">Home</a>
+  <a href="#games">Games</a>
+  <a href="#premium">Premium</a>
+  <a href="#contact">Contact</a>
+</nav>
  <body cz-shortcut-listen="true">
   
   <div id="root"><div class="font-sans"><div><div role="region" label="Notifications (F8)" tabindex="-1" style="pointer-events: none;"><ol tabindex="-1" class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"></ol></div></div><div><section label="Notifications alt+T" tabindex="-1" live="polite" relevant="additions text" atomic="false"></section></div><div><div style="position: fixed; z-index: 9999; inset: 16px; pointer-events: none;"></div></div><div><div style="position: fixed; z-index: 9999; inset: 16px; pointer-events: none;"></div></div><div><section label="Notifications alt+T" tabindex="-1" live="polite" relevant="additions text" atomic="false"></section></div><div><div style="position: fixed; z-index: 9999; inset: 16px; pointer-events: none;"></div></div><div class="min-h-screen w-full relative app-preview"><div class="flex flex-col w-full h-full"><div class="bg-white w-full min-h-full overflow-auto"><div id="component-preview-container"><div class="min-h-screen bg-gradient-to-br from-orange-50 via-yellow-50 to-red-50">
@@ -128,5 +193,10 @@ summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{mar
                     <a class="text-gray-600 hover:text-orange-600 transition-colors text-sm md:text-base" href="refund.html">Refund Terms</a>
                     <a class="text-gray-600 hover:text-orange-600 transition-colors text-sm md:text-base" href="sub_terms.html">Subscription Terms</a></div></div></div></div></footer></div></div></div></div></div></div></div>
  
-
+<script>
+  document.getElementById('burger').addEventListener('click', function () {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('show');
+  });
+</script>
 </body></html>
