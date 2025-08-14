@@ -125,5 +125,43 @@ summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{mar
                     <a class="text-gray-600 hover:text-orange-600 transition-colors text-sm md:text-base" href="refund.html">Refund Terms</a>
                     <a class="text-gray-600 hover:text-orange-600 transition-colors text-sm md:text-base" href="sub_terms.html">Subscription Terms</a></div></div></div></div></footer></div></div></div></div></div></div></div>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const burgerBtn = document.querySelector('.md\\:hidden button');
+  const desktopLinksContainer = document.querySelector('.md\\:flex'); // основной контейнер для десктопных ссылок
 
+  if (!burgerBtn || !desktopLinksContainer) return;
+
+  // Копируем все ссылки из desktop-версии
+  const navLinks = Array.from(desktopLinksContainer.querySelectorAll('a'))
+    .map(link => `<a href="${link.getAttribute('href')}" class="block py-2 border-b">${link.innerHTML}</a>`)
+    .join('');
+
+  // Создаём контейнер мобильного меню
+  const mobileNav = document.createElement('div');
+  mobileNav.id = 'mobileMenu';
+  mobileNav.className = 'hidden fixed inset-0 bg-white z-50 p-4 overflow-y-auto';
+  mobileNav.innerHTML = `
+    <button id="closeMenu" class="absolute top-4 right-4 p-2 text-2xl">✕</button>
+    <nav class="flex flex-col gap-2 mt-12 text-lg font-medium">
+      ${navLinks}
+    </nav>
+  `;
+  document.body.appendChild(mobileNav);
+
+  // Открытие меню
+  burgerBtn.addEventListener('click', () => {
+    mobileNav.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  });
+
+  // Закрытие меню
+  mobileNav.addEventListener('click', (e) => {
+    if (e.target.id === 'closeMenu' || e.target === mobileNav) {
+      mobileNav.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  });
+});
+</script>
 </body></html>
