@@ -129,48 +129,73 @@ summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{mar
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const burgerBtn = document.querySelector('.md\\:hidden button');
-  const desktopLinksContainer = document.querySelector('.md\\:flex');
+  // 1) Находим элементы в твоём nav
+  const nav = document.querySelector('nav.sticky');
+  if (!nav) return;
 
-  if (!burgerBtn || !desktopLinksContainer) return;
+  // Верхняя мобильная строка с логотипом и кнопкой
+  const mobileHeaderRow = nav.querySelector('.md\\:hidden.flex.justify-between.items-center.h-14');
+  const burgerBtn = mobileHeaderRow ? mobileHeaderRow.querySelector('button') : null;
 
-  const navLinks = Array.from(desktopLinksContainer.querySelectorAll('a'))
-    .map(link => `<a href="${link.getAttribute('href')}" class="block py-2 border-b">${link.innerHTML}</a>`)
-    .join('');
+  // Собственно панель мобильного меню (та, что с Categories/Buttons)
+  const mobilePanel = nav.querySelector('.md\\:hidden.border-t');
+  if (!burgerBtn || !mobilePanel) return;
 
-  const mobileNav = document.createElement('div');
-  mobileNav.id = 'mobileMenu';
-  mobileNav.className = 'hidden fixed inset-0 bg-white z-50 p-4 overflow-y-auto transition-opacity duration-300 opacity-0';
-  mobileNav.innerHTML = `
-    <button id="closeMenu" class="absolute top-4 right-4 p-2 text-2xl">✕</button>
-    <nav class="flex flex-col gap-2 mt-12 text-lg font-medium">
-      ${navLinks}
-    </nav>
-  `;
-  document.body.appendChild(mobileNav);
+  // 2) Гарантируем, что мобильная панель скрыта по умолчанию
+  mobilePanel.id = 'mobilePanel';
+  mobilePanel.classList.add('hidden');
+  burgerBtn.setAttribute('aria-controls', 'mobilePanel');
+  burgerBtn.setAttribute('aria-expanded', 'false');
 
-  function openMenu() {
-    mobileNav.classList.remove('hidden');
-    setTimeout(() => {
-      mobileNav.classList.add('opacity-100');
-    }, 10);
-    document.body.style.overflow = 'hidden';
-  }
+  // 3) Функция смены иконки на кнопке (бургер <-> крестик)
+  const setIcon = (open) => {
+    const svg = burgerBtn.querySelector('svg');
+    if (!svg) return;
+    if (open) {
+      // Крестик
+      svg.setAttribute('class', 'lucide lucide-x w-5 h-5');
+      svg.innerHTML = '<path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>';
+    } else {
+      // Бургер
+      svg.setAttribute('class', 'lucide lucide-menu w-5 h-5');
+      svg.innerHTML = '<line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line>';
+    }
+  };
 
-  function closeMenu() {
-    mobileNav.classList.remove('opacity-100');
-    setTimeout(() => {
-      mobileNav.classList.add('hidden');
-      document.body.style.overflow = '';
-    }, 300); // время анимации
-  }
+  // 4) Открыть/закрыть меню (без блокировки скролла body)
+  const toggleMenu = () => {
+    const nowHidden = mobilePanel.classList.toggle('hidden'); // true если СТАЛ скрытым
+    const isOpen = !nowHidden;
+    burgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    setIcon(isOpen);
+  };
 
-  burgerBtn.addEventListener('click', openMenu);
-  mobileNav.addEventListener('click', (e) => {
-    if (e.target.id === 'closeMenu' || e.target === mobileNav) {
-      closeMenu();
+  // 5) Слушатели
+  burgerBtn.addEventListener('click', toggleMenu);
+
+  // Закрывать меню по клику на ссылку внутри панели (удобно для якорей)
+  mobilePanel.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (a && a.getAttribute('href')?.startsWith('#')) {
+      toggleMenu();
     }
   });
+
+  // 6) Ресет при переходе на десктоп (>=768px): прячем панель + иконка = бургер
+  const mql = window.matchMedia('(min-width: 768px)');
+  const resetToDesktop = () => {
+    if (mql.matches) {
+      mobilePanel.classList.add('hidden');
+      burgerBtn.setAttribute('aria-expanded', 'false');
+      setIcon(false);
+    }
+  };
+  mql.addEventListener('change', resetToDesktop);
+  resetToDesktop(); // на старте — корректное состояние
+
+  // 7) Инициализируем кнопку как "бургер"
+  setIcon(false);
 });
 </script>
+
 </body></html>
