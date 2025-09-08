@@ -16,6 +16,35 @@
       <link href="css/style.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
   </head>
+    <style>
+      #mobileMenu {
+      transition: transform 0.3s ease;
+      }
+      .fun-shadow {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      .category-tab {
+      transition: all 0.2s ease;
+      }
+      .category-tab:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      }
+      .arena-gradient {
+      background: linear-gradient(135deg, #FFE4B5 0%, #FFDAB9 50%, #FFB6C1 100%);
+      }
+      .highlight-button {
+      background: linear-gradient(135deg, #FF6B35, #F7931E);
+      color: white;
+      font-weight: bold;
+      }
+      .highlight-button:hover {
+      background: linear-gradient(135deg, #E55A2B, #D17D1A);
+      }
+   </style>
+   <style>
+      #mobileMenu.opacity-100 { opacity: 1; }
+   </style>
   <body class="font-sans bg-gray-50">
     <div role="region" label="Notifications (F8)" tabindex="-1" style="pointer-events: none;">
                   <ol tabindex="-1" class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"></ol>
