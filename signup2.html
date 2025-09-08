@@ -16,38 +16,72 @@
       <link href="css/style.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
   </head>
-  <style>
-  .my-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: linear-gradient(to right, orange, red);
-    color: white;
-    font-size: 18px;
-    padding: 16px;
-    border-radius: 6px;
-    text-decoration: none;
-  }
-
-  .my-button:hover {
-    background: linear-gradient(to right, #ff8000, #cc0000);
-  }
-</style>
   <body class="font-sans bg-gray-50">
-    <div
-      id="sidebarOverlay"
-      class="fixed inset-0 z-40 hidden sidebar-backdrop"
-    ></div>
-
-    <div
-      id="sidebar"
-      class="fixed top-0 left-0 h-full w-80 glass-effect transform -translate-x-full transition-transform duration-300 ease-in-out z-50"
-    >
-      <div class="p-4">
-        <div  class="md:hidden flex justify-between items-center h-14">
+    <div role="region" label="Notifications (F8)" tabindex="-1" style="pointer-events: none;">
+                  <ol tabindex="-1" class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"></ol>
+               </div>
+            </div>
+            <div>
+               <section label="Notifications alt+T" tabindex="-1" live="polite" relevant="additions text" atomic="false"></section>
+            </div>
+            <div>
+               <div style="position: fixed; z-index: 9999; inset: 16px; pointer-events: none;"></div>
+            </div>
+            <div>
+               <div style="position: fixed; z-index: 9999; inset: 16px; pointer-events: none;"></div>
+            </div>
+            <div>
+               <section label="Notifications alt+T" tabindex="-1" live="polite" relevant="additions text" atomic="false"></section>
+            </div>
+            <div>
+               <div style="position: fixed; z-index: 9999; inset: 16px; pointer-events: none;"></div>
+            </div>
+            <div class="min-h-screen w-full relative app-preview">
+               <div class="flex flex-col w-full h-full">
+                  <div class="bg-white w-full min-h-full overflow-auto">
+                     <div id="component-preview-container">
+                        <div class="min-h-screen bg-gradient-to-br from-orange-50 via-yellow-50 to-red-50">
+                           <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b-2 border-orange-200 fun-shadow">
+                              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                 <div class="hidden md:flex justify-between items-center h-16">
+                                    <a class="flex items-center gap-3 group" href="index.html">
+                                       <div class="relative">
+                                          <div class="w-10 h-10 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap w-6 h-6 text-white"          >
+                                                <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
+                                             </svg>
+                                          </div>
+                                          <div class="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full"></div>
+                                       </div>
+                                       <div>
+                                          <span           class="text-xl font-black text-gray-800 tracking-wide">ARENALYST</span>
+                                          <div class="text-xs text-orange-600 font-semibold -mt-1">YOUR HTML5 GAMES ARENA</div>
+                                       </div>
+                                    </a>
+                                    <div class="flex items-center gap-3">
+                                       <a href="contactus.html">
+                                          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 highlight-button text-sm px-4 py-2" >
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-headphones w-4 h-4 mr-1"          >
+                                                <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path>
+                                             </svg>
+                                             Contact Us
+                                          </button>
+                                       </a>
+                                       <a href="cancel.html">
+                                          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 highlight-button text-sm px-4 py-2"          >
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-credit-card w-4 h-4 mr-1"          >
+                                                <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                                                <line x1="2" x2="22" y1="10" y2="10"></line>
+                                             </svg>
+                                             Cancel Subscription
+                                          </button>
+                                       </a>
+                                    </div>
+                                 </div>
+                                 <div           class="md:hidden flex justify-between items-center h-14">
                                     <a           class="flex items-center gap-2" href="index.html">
                                        <div           class="relative">
-                                          <div class="w-8 h-8 bg-gradient-to-br from-orange-400 to-red-500 rounded-lg flex items-center justify-center">
+                                          <div           class="w-8 h-8 bg-gradient-to-br from-orange-400 to-red-500 rounded-lg flex items-center justify-center">
                                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap w-4 h-4 text-white"          >
                                                 <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
                                              </svg>
@@ -56,7 +90,7 @@
                                        </div>
                                        <div          >
                                           <span           class="text-lg font-black text-gray-800">ARENALYST</span>
-                                          <div           class="text-xs text-orange-600 font-semibold -mt-1">YOUR HTML5 GAMES ARENA</div>
+                                          <div           class="text-xs text-orange-600 font-semibold -mt-1">GAMES ARENA</div>
                                        </div>
                                     </a>
                                     <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md p-2"          >
@@ -66,243 +100,108 @@
                                        </svg>
                                     </button>
                                  </div>
-
-        <nav>
-          <div>
-            <a
-              href="index.html"
-              class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 text-gray-700 hover:text-white"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-house w-5 h-5"
-              >
-                <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
-                <path
-                  d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
-                ></path>
-              </svg>
-              <span>Home</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-chevron-right w-4 h-4 ml-auto opacity-50"
-              >
-                <path d="m9 18 6-6-6-6"></path>
-              </svg>
-            </a>
-
-            <a
-              href="game.html"
-              class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 text-gray-700 hover:text-white"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-gamepad2 w-5 h-5"
-              >
-                <line x1="6" x2="10" y1="11" y2="11"></line>
-                <line x1="8" x2="8" y1="9" y2="13"></line>
-                <line x1="15" x2="15.01" y1="12" y2="12"></line>
-                <line x1="18" x2="18.01" y1="10" y2="10"></line>
-                <path
-                  d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"
-                ></path>
-              </svg>
-              <span>Games</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-chevron-right w-4 h-4 ml-auto opacity-50"
-              >
-                <path d="m9 18 6-6-6-6"></path>
-              </svg>
-            </a>
-          </div>
-          <div class="mt-6 pt-4 border-t border-white/20">
-            <div class="mb-6">
-              <a
-                href="contactus.html"
-                class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 text-gray-700 hover:text-white"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-mail w-4 h-4"
-                >
-                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                </svg>
-                <span>Contact Us</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-chevron-right w-4 h-4 ml-auto opacity-50"
-                >
-                  <path d="m9 18 6-6-6-6"></path>
-                </svg>
-              </a>
-              <a
-                href="cancel.html"
-                class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 text-gray-700 hover:text-white"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-credit-card w-4 h-4"
-                >
-                  <rect width="20" height="14" x="2" y="5" rx="2"></rect>
-                  <line x1="2" x2="22" y1="10" y2="10"></line>
-                </svg>
-                <span>Cancel Subscription</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-chevron-right w-4 h-4 ml-auto opacity-50"
-                >
-                  <path d="m9 18 6-6-6-6"></path>
-                </svg>
-              </a>
-            </div>
-            <div>
-              <a
-                href="login.html"
-                class="bg-white inline-flex items-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 px-4 py-2 w-full justify-start gap-3 border-white/20 hover:bg-white/20"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-user w-4 h-4"
-                >
-                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-                Login
-              </a>
-              <a
-                href="signup.html"
-                  class="my-button">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-user w-4 h-4"
-                >
-                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-                Sign Up
-              </a>
-            </div>
-            <div
-              style="display: none"
-              class="w-full relative inline-block text-left group pt-5"
-            >
-              <a
-                class="trigger2 cursor-pointer flex items-center justify-between px-4 py-2 border rounded text-sm font-medium text-gray-700 border-indigo-200 hover:bg-gray-100"
-              >
-                <span class="ml-2 user_name">user_name</span>
-                <svg
-                  class="w-4 h-4 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </a>
-              <div
-                class="dropdown2 absolute w-full right-0 mt-2 w-32 bg-white border border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-150 z-10"
-              >
-                <a
-                  href="/?delcookie=1"
-                  class="cursor-pointer block px-4 py-2 text-sm text-gray-700"
-                  >Log out</a
-                >
-              </div>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </div>
-
-    
-
+                                 <div           class="hidden md:block border-t border-gray-100 bg-white/90">
+                                    <div           class="flex items-center justify-between py-3">
+                                       <div           class="flex items-center space-x-1 overflow-x-auto">
+                                          <a           class="category-tab flex-shrink-0 px-4 py-2 rounded-full bg-gradient-to-r from-orange-100 to-red-100 hover:from-orange-200 hover:to-red-200 border border-orange-200 text-center min-w-fit" href="/?page=game&amp;cat=Family">
+                                             <div           class="text-sm font-semibold text-gray-800">Family</div>
+                                             <div           class="text-xs text-orange-600 font-medium">100+ games</div>
+                                          </a>
+                                          <a           class="category-tab flex-shrink-0 px-4 py-2 rounded-full bg-gradient-to-r from-orange-100 to-red-100 hover:from-orange-200 hover:to-red-200 border border-orange-200 text-center min-w-fit" href="/?page=games&amp;cat=Puzzle">
+                                             <div           class="text-sm font-semibold text-gray-800">Puzzle</div>
+                                             <div           class="text-xs text-orange-600 font-medium">100+ games</div>
+                                          </a>
+                                          <a           class="category-tab flex-shrink-0 px-4 py-2 rounded-full bg-gradient-to-r from-orange-100 to-red-100 hover:from-orange-200 hover:to-red-200 border border-orange-200 text-center min-w-fit" href="/?page=games&amp;cat=Action">
+                                             <div           class="text-sm font-semibold text-gray-800">Action</div>
+                                             <div           class="text-xs text-orange-600 font-medium">100+ games</div>
+                                          </a>
+                                          <a           class="category-tab flex-shrink-0 px-4 py-2 rounded-full bg-gradient-to-r from-orange-100 to-red-100 hover:from-orange-200 hover:to-red-200 border border-orange-200 text-center min-w-fit" href="/?page=games&amp;cat=Strategy">
+                                             <div           class="text-sm font-semibold text-gray-800">Strategy</div>
+                                             <div           class="text-xs text-orange-600 font-medium">60+ games</div>
+                                          </a>
+                                          <a           class="category-tab flex-shrink-0 px-4 py-2 rounded-full bg-gradient-to-r from-orange-100 to-red-100 hover:from-orange-200 hover:to-red-200 border border-orange-200 text-center min-w-fit" href="game.html">
+                                             <div           class="text-sm font-semibold text-gray-800">...</div>
+                                          </a>
+                                       </div>
+                                       <div           class="flex items-center gap-3 ml-4">
+                                          <a           href="login.html">
+                                             <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 px-4 py-2 border-gray-300 hover:bg-gray-50"          >
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in w-4 h-4 mr-2"          >
+                                                   <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                                                   <polyline points="10 17 15 12 10 7"></polyline>
+                                                   <line x1="15" x2="3" y1="12" y2="12"></line>
+                                                </svg>
+                                                Log In
+                                             </button>
+                                          </a>
+                                          <a href="signup.html" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-10 py-2 bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 text-white font-semibold px-6"          >JOIN</a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div           class="md:hidden border-t border-gray-200 bg-white">
+                                 <div           class="p-4 space-y-4">
+                                    <div           class="space-y-2">
+                                       <a           class="w-full block" href="contactus.html">
+                                          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 w-full highlight-button text-sm py-3"          >
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-headphones w-4 h-4 mr-2"          >
+                                                <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path>
+                                             </svg>
+                                             Contact Us
+                                          </button>
+                                       </a>
+                                       <a           class="w-full block" href="cancel.html">
+                                          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 w-full highlight-button text-sm py-3"          >
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-credit-card w-4 h-4 mr-2"          >
+                                                <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                                                <line x1="2" x2="22" y1="10" y2="10"></line>
+                                             </svg>
+                                             Cancel Subscription
+                                          </button>
+                                       </a>
+                                    </div>
+                                    <div           class="space-y-2">
+                                       <h3           class="font-semibold text-gray-800 text-sm">Categories</h3>
+                                       <div           class="grid grid-cols-2 gap-2">
+                                          <a           class="p-3 rounded-lg bg-gradient-to-r from-orange-100 to-red-100 border border-orange-200 text-center" href="/?page=game&amp;cat=Family">
+                                             <div           class="text-sm font-semibold text-gray-800">Family</div>
+                                             <div           class="text-xs text-orange-600 font-medium">100+ games</div>
+                                          </a>
+                                          <a           class="p-3 rounded-lg bg-gradient-to-r from-orange-100 to-red-100 border border-orange-200 text-center" href="/?page=games&amp;cat=Puzzle">
+                                             <div           class="text-sm font-semibold text-gray-800">Puzzle</div>
+                                             <div           class="text-xs text-orange-600 font-medium">100+ games</div>
+                                          </a>
+                                          <a           class="p-3 rounded-lg bg-gradient-to-r from-orange-100 to-red-100 border border-orange-200 text-center" href="/?page=games&amp;cat=Action">
+                                             <div           class="text-sm font-semibold text-gray-800">Action</div>
+                                             <div           class="text-xs text-orange-600 font-medium">100+ games</div>
+                                          </a>
+                                          <a           class="p-3 rounded-lg bg-gradient-to-r from-orange-100 to-red-100 border border-orange-200 text-center" href="/?page=games&amp;cat=Strategy">
+                                             <div           class="text-sm font-semibold text-gray-800">Strategy</div>
+                                             <div           class="text-xs text-orange-600 font-medium">60+ games</div>
+                                          </a>
+                                          <a           class="p-3 rounded-lg bg-gradient-to-r from-orange-100 to-red-100 border border-orange-200 text-center" href="game.html">
+                                             <div           class="text-sm font-semibold text-gray-800">More...</div>
+                                          </a>
+                                       </div>
+                                    </div>
+                                    <div           class="space-y-2 pt-4 border-t border-gray-200">
+                                       <div           class="space-y-2">
+                                          <a           href="login.html">
+                                             <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 px-4 w-full border-gray-300 hover:bg-gray-50 py-3"          >
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in w-4 h-4 mr-2"          >
+                                                   <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                                                   <polyline points="10 17 15 12 10 7"></polyline>
+                                                   <line x1="15" x2="3" y1="12" y2="12"></line>
+                                                </svg>
+                                                Log In
+                                             </button>
+                                          </a>
+                                          <a href="signup.html" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-10 px-4 w-full bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 text-white font-semibold py-3"          >JOIN</a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </nav>
     <main class="blog pt-16 min-h-screen">
       <div
         class="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50 py-12"
