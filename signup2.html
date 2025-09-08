@@ -16,6 +16,23 @@
       <link href="css/style.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
   </head>
+  <style>
+  .my-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(to right, orange, red);
+    color: white;
+    font-size: 18px;
+    padding: 16px;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+
+  .my-button:hover {
+    background: linear-gradient(to right, #ff8000, #cc0000);
+  }
+</style>
   <body class="font-sans bg-gray-50">
     <div
       id="sidebarOverlay"
@@ -228,7 +245,7 @@
               </a>
               <a
                 href="signup.html"
-                  class="button inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary h-10 py-2  bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 text-white py-4 text-lg mt-8">
+                  class="my-button">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
