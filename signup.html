@@ -569,8 +569,11 @@
                                                 <label  class="text-sm text-gray-700" for="checkBox3">I agree to a recurring monthly transaction of 38.95 EUR following a 3 day trial.</label>
                                              </div>
                                           </div>
-                                          <div style="display: block; flex-flow: row;">
-                        <div class="cf-turnstile" data-sitekey="" data-size="flexible" theme="dark"></div></div>
+                                          <div class="cf-turnstile"
+     data-sitekey="ВАШ_SITE_KEY"
+     data-size="flexible"
+     data-theme="dark">
+</div>
                                           <div class="pt-6">
                                              <button type="submit"
                                                 value="Continue" class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-10 px-4 w-full bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 text-white font-bold py-4 rounded-xl text-lg">
@@ -690,6 +693,7 @@
            setIcon(false);
          });
       </script>
+      <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>      
