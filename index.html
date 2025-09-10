@@ -164,23 +164,24 @@
                                           </a>
                                        </div>
                                        <div           class="flex items-center gap-3 ml-4">
-                                          <a           href="login.html">
-                                             <button class="login-btn inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 px-4 py-2 border-gray-300 hover:bg-gray-50"          >
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in w-4 h-4 mr-2"          >
-                                                   <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
-                                                   <polyline points="10 17 15 12 10 7"></polyline>
-                                                   <line x1="15" x2="3" y1="12" y2="12"></line>
-                                                </svg>
-                                                Log In
-                                             </button>
-                                          </a>
+                                          <a href="login.html">
+  <button class="login-btn inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border bg-background hover:text-accent-foreground h-10 px-4 py-2 border-gray-300 hover:bg-gray-50">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in w-4 h-4 mr-2">
+      <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+      <polyline points="10 17 15 12 10 7"></polyline>
+      <line x1="15" x2="3" y1="12" y2="12"></line>
+    </svg>
+    Log In
+  </button>
+</a>
                                           <a href="signup.html" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-10 py-2 bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 text-white font-semibold px-6">JOIN</a>
-                                          <div class="logout-btn d-none inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-10 py-2 bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 text-white font-semibold px-6">
-              <span class="user-id" id="user_id"></span>
-              <a class="logout-btn hidden btn btn-outline-light me-2" href="/?delcookie=1">
-                <i id="logout" class="fas fa-user-plus"></i> Logout
-              </a>
-            </div>
+              <div class="logout-container hidden inline-flex items-center justify-center gap-2 rounded-md bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-500 hover:to-red-600 text-white font-semibold px-6 h-10 py-2">
+  <span class="user-id" id="user_id"></span>
+  <button class="logout-link flex items-center gap-2">
+    <i class="fas fa-sign-out-alt"></i> Logout
+  </button>
+</div>
+
                                        </div>
                                     </div>
                                  </div>
@@ -659,22 +660,39 @@
       </script>
       <script type="text/javascript">
          document.addEventListener('DOMContentLoaded', function () {
- 
-  const isLogged = localStorage.getItem('isLogged') === 'true';
-
   const loginBtn = document.querySelector('.login-btn');
-  const logoutBtn = document.querySelector('.logout-btn');
+  const logoutContainer = document.querySelector('.logout-container');
+  const logoutLink = document.querySelector('.logout-link');
+  const userIdSpan = document.querySelector('#user_id');
+(localStorage)
+  let isLogged = localStorage.getItem('isLogged') === 'true';
+  let username = localStorage.getItem('username') || '';
 
-  if (isLogged) {
-    
-    if (loginBtn) loginBtn.classList.add('hidden');
-    if (logoutBtn) logoutBtn.classList.remove('hidden');
-  } else {
-   
-    if (loginBtn) loginBtn.classList.remove('hidden');
-    if (logoutBtn) logoutBtn.classList.add('hidden');
+  function updateUI() {
+    if (isLogged) {
+      loginBtn.classList.add('hidden');
+      logoutContainer.classList.remove('hidden');
+      userIdSpan.textContent = username;
+    } else {
+      loginBtn.classList.remove('hidden');
+      logoutContainer.classList.add('hidden');
+      userIdSpan.textContent = '';
+    }
+  }
+
+  updateUI();
+
+  // Logout
+  if (logoutLink) {
+    logoutLink.addEventListener('click', () => {
+      isLogged = false;
+      localStorage.setItem('isLogged', 'false');
+      localStorage.removeItem('username');
+      updateUI();
+    });
   }
 });
+
       </script>
    </body>
 </html>
