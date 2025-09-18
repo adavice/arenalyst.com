@@ -272,3 +272,4 @@ input[type="checkbox"]{
 .list-disc{
   list-style-type: disc;
 }
+div.wpwl-brand-custom  { margin: 0px 5px; background-image: url(../images/brand.png); }
