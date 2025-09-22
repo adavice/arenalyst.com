@@ -272,14 +272,5 @@ input[type="checkbox"]{
 .list-disc{
   list-style-type: disc;
 }
-div.wpwl-brand-custom  { margin: 0px 5px; background-image: url(../img/brand.png); }
-.wpwl-brand-MASTER {
-    background-position: 0px 5981px;
-   
-}
-.wpwl-brand-VISA {
-    
-    background-position: 0 789px;
-   
-}
+
 .loading_gif{width: 120px;}
