@@ -112,3 +112,13 @@ div.wpwl-brand-custom  { margin: 0px 5px; background-image: url(../images/brand.
         padding: 0 10px;
     }
 }
+div.wpwl-brand-custom  { margin: 0px 5px; background-image: url(../img/brand.png); }
+.wpwl-brand-MASTER {
+    background-position: 0px 5981px;
+   
+}
+.wpwl-brand-VISA {
+    
+    background-position: 0 789px;
+   
+}
